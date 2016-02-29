@@ -77,13 +77,13 @@
     [components setMonth:components.month+1];
     [components setDay:components.day-1];
     
-    NSString *title3Part1 = [NSString localizedStringWithFormat:
+    NSString *title3Part1 = [NSString stringWithFormat:
                              NSLocalizedString(@"In %@ there are %U days this year.", nil),
                              [formatter stringFromDate:[NSDate date]],
                              [currentCalendar component:NSCalendarUnitDay
                                                fromDate:[currentCalendar dateFromComponents:components]]];
     
-    NSString *title3Part2 = [NSString localizedStringWithFormat:
+    NSString *title3Part2 = [NSString stringWithFormat:
                         NSLocalizedString(@"We are on %U day of %@.", nil),
                         [currentCalendar component:NSCalendarUnitDay
                                           fromDate:[NSDate date]],
