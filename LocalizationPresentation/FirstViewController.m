@@ -37,7 +37,7 @@
     
     UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectZero];
     [label1 setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label1 setText:@"Welcome!"];
+    [label1 setText:NSLocalizedString(@"Welcome!", nil)];
     [container addSubview:label1];
     
     [container addConstraints:[NSLayoutConstraint
@@ -45,10 +45,17 @@
                                options:NSLayoutFormatAlignAllCenterY
                                metrics:nil
                                views:NSDictionaryOfVariableBindings(label1)]];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[NSLocale autoupdatingCurrentLocale]];
+    [formatter setDateFormat:@"MMMM"];
+    
+    NSString *title2 = [NSString stringWithFormat:NSLocalizedString(@"We a in the month of %@", nil),
+                        [formatter stringFromDate:[NSDate date]]];
 
     UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectZero];
     [label2 setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label2 setText:@"We a in the month of %@"];
+    [label2 setText:title2];
     [label2 setLineBreakMode:NSLineBreakByWordWrapping];
     [label2 setNumberOfLines:0];
     [container addSubview:label2];
@@ -58,11 +65,31 @@
                                options:NSLayoutFormatAlignAllCenterY
                                metrics:nil
                                views:NSDictionaryOfVariableBindings(label2)]];
+    
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+
+    NSDateComponents *components = [currentCalendar components:(NSCalendarUnitEra
+                                                                | NSCalendarUnitYear
+                                                                | NSCalendarUnitMonth)
+                                                      fromDate:[NSDate date]];
+    
+    [components setDay:1];
+    [components setMonth:components.month+1];
+    [components setDay:components.day-1];
+    
+    NSString *title3 = [NSString stringWithFormat:
+                        NSLocalizedString(@"In %@ there are %lu days this year. We are on %lu day of %@", nil),
+                        [formatter stringFromDate:[NSDate date]],
+                        [currentCalendar component:NSCalendarUnitDay
+                                          fromDate:[currentCalendar dateFromComponents:components]],
+                        [currentCalendar component:NSCalendarUnitDay
+                                          fromDate:[NSDate date]],
+                        [formatter stringFromDate:[NSDate date]]];
 
     
     UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectZero];
     [label3 setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label3 setText:@"In %@ there are %lu days this year. We are on %lu day of %@"];
+    [label3 setText:title3];
     [label3 setNumberOfLines:0];
     [label3 setLineBreakMode:NSLineBreakByWordWrapping];
     [container addSubview:label3];
