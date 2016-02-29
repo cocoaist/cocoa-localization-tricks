@@ -90,6 +90,11 @@
 - (void)setupTitles {
     [self.label1 setText:NSLocalizedString(@"Welcome!", @"Say welcome to the user")];
     
+    [@"SITKI" lowercaseString]; //sitki
+    
+    [@"SITKI" lowercaseStringWithLocale:[NSLocale autoupdatingCurrentLocale]]; //sıtkı
+    [@"SITKI" localizedLowercaseString]; // sıtkı when locale is tr_TR
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[NSLocale autoupdatingCurrentLocale]];
     [formatter setDateFormat:@"MMMM"];
