@@ -15,7 +15,6 @@
 		B951CE9C1C845184001F7167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B951CE9B1C845184001F7167 /* Assets.xcassets */; };
 		B951CE9F1C845184001F7167 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B951CE9D1C845184001F7167 /* LaunchScreen.storyboard */; };
 		B951CECA1C847E25001F7167 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B951CEC31C847E25001F7167 /* Localizable.strings */; };
-		B951CECB1C847E25001F7167 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = B951CEC61C847E25001F7167 /* Localizable.stringsdict */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +38,7 @@
 		B951CEBC1C846407001F7167 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B951CEC41C847E25001F7167 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B951CEC51C847E25001F7167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B951CEC71C847E25001F7167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		B951CEC81C847E25001F7167 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B951CEC91C847E25001F7167 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = tr; path = tr.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				B951CEC31C847E25001F7167 /* Localizable.strings */,
-				B951CEC61C847E25001F7167 /* Localizable.stringsdict */,
 			);
 			path = Localizations;
 			sourceTree = "<group>";
@@ -188,7 +184,6 @@
 				B951CECA1C847E25001F7167 /* Localizable.strings in Resources */,
 				B951CE9C1C845184001F7167 /* Assets.xcassets in Resources */,
 				B951CE9A1C845184001F7167 /* Main.storyboard in Resources */,
-				B951CECB1C847E25001F7167 /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,15 +232,6 @@
 				B951CEC81C847E25001F7167 /* tr */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		B951CEC61C847E25001F7167 /* Localizable.stringsdict */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B951CEC71C847E25001F7167 /* en */,
-				B951CEC91C847E25001F7167 /* tr */,
-			);
-			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
