@@ -1,0 +1,19 @@
+[[Uncategorized]]
+	[In %@ there are %U days this year.]
+		en = In %1$@ there are %2$U days this year.
+		comment = No comment provided by engineer.
+		tr = Bu sene %1$@ ayında %2$U gün var.
+	[We a in the month of %@]
+		en = We a in the month of %@
+		comment = No comment provided by engineer.
+		tr = %@ ayındayız.
+		de = We a in the month of %@
+	[We are on %U day of %@.]
+		en = We are on %1$U day of %2$@.
+		comment = No comment provided by engineer.
+		tr = Bugün %2$@ ayının %1$U günündeyiz.
+	[Welcome!]
+		en = Welcome!
+		comment = No comment provided by engineer.
+		tr = Hoşgeldiniz
+		de = Welcome!
