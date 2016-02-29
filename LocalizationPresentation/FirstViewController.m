@@ -94,11 +94,22 @@
     [formatter setLocale:[NSLocale autoupdatingCurrentLocale]];
     [formatter setDateFormat:@"MMMM"];
     
-    NSString *title2 = [NSString stringWithFormat:NSLocalizedString(@"We a in the month of %@.", nil),
+    NSDictionary *boldAttributes = @{ NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0] };
+    
+    NSString *title2 = [NSString stringWithFormat:NSLocalizedString(@"|%@| is this months name.", nil),
                         [formatter stringFromDate:[NSDate date]]];
+    
+    NSArray *title2Components = [title2 componentsSeparatedByString:@"|"];
+    
+    NSMutableAttributedString *title2AttributedString = [[NSMutableAttributedString alloc] init];
+    
+    [title2AttributedString appendAttributedString:[[NSAttributedString alloc] initWithString:title2Components[0]]];
+    [title2AttributedString appendAttributedString:[[NSAttributedString alloc] initWithString:title2Components[1]
+                                                                                   attributes:boldAttributes]];
+    [title2AttributedString appendAttributedString:[[NSAttributedString alloc] initWithString:title2Components[2]]];
 
     
-    [self.label2 setText:title2];
+    [self.label2 setAttributedText:title2AttributedString];
     
     NSCalendar *currentCalendar = [NSCalendar currentCalendar];
     
@@ -111,20 +122,63 @@
     [components setMonth:components.month+1];
     [components setDay:components.day-1];
     
+    NSString *numberOfDaysString = NSLocalizedString(@"In |%@| there are |%U| days this year.", nil);
+    
     NSString *title3Part1 = [NSString stringWithFormat:
-                             NSLocalizedString(@"In %@ there are %U days this year.", nil),
+                             numberOfDaysString,
                              [formatter stringFromDate:[NSDate date]],
                              [currentCalendar component:NSCalendarUnitDay
                                                fromDate:[currentCalendar dateFromComponents:components]]];
     
+    NSArray *title3Part1Components = [title3Part1 componentsSeparatedByString:@"|"];
+
+    NSMutableAttributedString *title3AttributedString = [[NSMutableAttributedString alloc] init];
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part1Components[0]]];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part1Components[1] attributes:boldAttributes]];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part1Components[2]]];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part1Components[3] attributes:boldAttributes]];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part1Components[4]]];
+    
+    [title3AttributedString appendAttributedString:[[NSAttributedString alloc] initWithString:@" "]];
+    
+    NSString *currentDayString = NSLocalizedString(@"We are on |%U|. day of |%@|.", nil);
+    
     NSString *title3Part2 = [NSString stringWithFormat:
-                        NSLocalizedString(@"We are on %U day of %@.", nil),
+                        currentDayString,
                         [currentCalendar component:NSCalendarUnitDay
                                           fromDate:[NSDate date]],
                         [formatter stringFromDate:[NSDate date]]];
+    
+    NSArray *title3Part2Components = [title3Part2 componentsSeparatedByString:@"|"];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part2Components[0]]];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part2Components[1] attributes:boldAttributes]];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part2Components[2]]];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part2Components[3] attributes:boldAttributes]];
+    
+    [title3AttributedString appendAttributedString:
+     [[NSAttributedString alloc] initWithString:title3Part2Components[4]]];
+
 
     
-    [self.label3 setText:[@[title3Part1, title3Part2] componentsJoinedByString:@" "]];
+    [self.label3 setAttributedText:title3AttributedString];
+//    [self.label3 setText:[@[title3Part1, title3Part2] componentsJoinedByString:@" "]];
 }
 
 @end
