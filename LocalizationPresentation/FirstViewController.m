@@ -77,11 +77,14 @@
     [components setMonth:components.month+1];
     [components setDay:components.day-1];
     
-    NSString *title3 = [NSString stringWithFormat:
-                        NSLocalizedString(@"In %@ there are %lu days this year. We are on %lu day of %@", nil),
-                        [formatter stringFromDate:[NSDate date]],
-                        [currentCalendar component:NSCalendarUnitDay
-                                          fromDate:[currentCalendar dateFromComponents:components]],
+    NSString *title3Part1 = [NSString localizedStringWithFormat:
+                             NSLocalizedString(@"In %@ there are %U days this year.", nil),
+                             [formatter stringFromDate:[NSDate date]],
+                             [currentCalendar component:NSCalendarUnitDay
+                                               fromDate:[currentCalendar dateFromComponents:components]]];
+    
+    NSString *title3Part2 = [NSString localizedStringWithFormat:
+                        NSLocalizedString(@"We are on %U day of %@.", nil),
                         [currentCalendar component:NSCalendarUnitDay
                                           fromDate:[NSDate date]],
                         [formatter stringFromDate:[NSDate date]]];
@@ -89,7 +92,7 @@
     
     UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectZero];
     [label3 setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [label3 setText:title3];
+    [label3 setText:[@[title3Part1, title3Part2] componentsJoinedByString:@" "]];
     [label3 setNumberOfLines:0];
     [label3 setLineBreakMode:NSLineBreakByWordWrapping];
     [container addSubview:label3];
