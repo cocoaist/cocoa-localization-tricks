@@ -11,7 +11,7 @@
 		en = Welcome!
 		comment = Say welcome to the user
 		tr = Hoşgeldiniz
-		de = Welcome!
+		de = Willkommen!
 	[|%@| is this months name.]
 		en = |%@| is this months name.
 		comment = No comment provided by engineer.

@@ -6,14 +6,5 @@
 
 /********** Uncategorized **********/
 
-/* No comment provided by engineer. */
-"In |%@| there are |%U| days this year." = "In |%1$@| there are |%2$U| days this year.";
-
-/* No comment provided by engineer. */
-"We are on |%U|. day of |%@|." = "We are on |%1$U|. day of |%2$@|.";
-
 /* Say welcome to the user */
-"Welcome!" = "Welcome!";
-
-/* No comment provided by engineer. */
-"|%@| is this months name." = "|%@| is this months name.";
+"Welcome!" = "Willkommen!";

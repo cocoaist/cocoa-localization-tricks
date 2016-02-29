@@ -3,5 +3,4 @@
 source ${0%/*}/setup.sh
 
 twine generate-all-string-files \
-	$TWINE_FILE \
-	$LOCALIZATION_DIRECTORY
+	$TWINE_FILE --include translated $LOCALIZATION_DIRECTORY
