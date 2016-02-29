@@ -88,9 +88,40 @@
 }
 
 - (void)setupTitles {
-    [self.label1 setText:@"Welcome!"];
-    [self.label2 setText:@"We a in the month of %@"];
-    [self.label3 setText:@"In %@ there are %lu days this year. We are on %lu day of %@"];
+    [self.label1 setText:NSLocalizedString(@"Welcome!", @"Say welcome to the user")];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setLocale:[NSLocale autoupdatingCurrentLocale]];
+    [formatter setDateFormat:@"MMMM"];
+    
+    NSString *title2 = [NSString stringWithFormat:NSLocalizedString(@"We a in the month of %@", nil),
+                        [formatter stringFromDate:[NSDate date]]];
+
+    
+    [self.label2 setText:title2];
+    
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents *components = [currentCalendar components:(NSCalendarUnitEra
+                                                                | NSCalendarUnitYear
+                                                                | NSCalendarUnitMonth)
+                                                      fromDate:[NSDate date]];
+    
+    [components setDay:1];
+    [components setMonth:components.month+1];
+    [components setDay:components.day-1];
+    
+    NSString *title3 = [NSString stringWithFormat:
+                        NSLocalizedString(@"In %@ there are %lu days this year. We are on %lu day of %@", nil),
+                        [formatter stringFromDate:[NSDate date]],
+                        [currentCalendar component:NSCalendarUnitDay
+                                          fromDate:[currentCalendar dateFromComponents:components]],
+                        [currentCalendar component:NSCalendarUnitDay
+                                          fromDate:[NSDate date]],
+                        [formatter stringFromDate:[NSDate date]]];
+
+    
+    [self.label3 setText:title3];
 }
 
 @end
