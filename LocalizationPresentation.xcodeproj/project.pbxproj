@@ -39,6 +39,9 @@
 		B951CEC41C847E25001F7167 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B951CEC51C847E25001F7167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B951CEC81C847E25001F7167 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B951CED11C84CAC1001F7167 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		B951CED21C84CAC1001F7167 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B951CED31C84CAC1001F7167 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,7 @@
 				Base,
 				tr,
 				de,
+				fr,
 			);
 			mainGroup = B951CE801C845184001F7167;
 			productRefGroup = B951CE8A1C845184001F7167 /* Products */;
@@ -210,6 +214,7 @@
 				B951CE991C845184001F7167 /* Base */,
 				B951CEB81C846401001F7167 /* tr */,
 				B951CEBB1C846407001F7167 /* de */,
+				B951CED11C84CAC1001F7167 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				B951CE9E1C845184001F7167 /* Base */,
 				B951CEB91C846401001F7167 /* tr */,
 				B951CEBC1C846407001F7167 /* de */,
+				B951CED21C84CAC1001F7167 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -230,6 +236,7 @@
 				B951CEC41C847E25001F7167 /* de */,
 				B951CEC51C847E25001F7167 /* en */,
 				B951CEC81C847E25001F7167 /* tr */,
+				B951CED31C84CAC1001F7167 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -358,6 +365,7 @@
 				B951CEB01C845184001F7167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

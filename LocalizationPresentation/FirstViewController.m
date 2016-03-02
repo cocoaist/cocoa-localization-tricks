@@ -88,7 +88,7 @@
 }
 
 - (void)setupTitles {
-    [self.label1 setText:NSLocalizedString(@"Welcome!", @"Say welcome to the user")];
+    [self.label1 setText:NSLocalizedString(@"Naber?", @"Say whatsup to user")];
     
     [@"SITKI" lowercaseString]; //sitki
     
@@ -183,7 +183,6 @@
 
     
     [self.label3 setAttributedText:title3AttributedString];
-//    [self.label3 setText:[@[title3Part1, title3Part2] componentsJoinedByString:@" "]];
 }
 
 @end

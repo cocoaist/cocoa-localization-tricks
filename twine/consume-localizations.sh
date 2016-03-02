@@ -2,7 +2,7 @@
 
 source ${0%/*}/setup.sh
 
-find $SOURCE_DIR -name \*.m \
+find $SOURCE_DIR -name \*.m -o -name \*.swift \
 	| xargs genstrings -o $LOCALIZATION_DIRECTORY/$DEVELOPMENT_LANGUAGE.lproj/
 
 echo "" > twine/strings

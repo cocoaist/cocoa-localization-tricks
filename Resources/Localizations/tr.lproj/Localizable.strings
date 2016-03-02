@@ -9,11 +9,11 @@
 /* No comment provided by engineer. */
 "In |%@| there are |%U| days this year." = "|%1$@| ayında bu sene |%2$U| gün var.";
 
+/* Say whatsup to user */
+"What's up?" = "What's up?";
+
 /* No comment provided by engineer. */
 "We are on |%U|. day of |%@|." = "|%2$@| ayının |%1$U|. günündeyiz.";
-
-/* Say welcome to the user */
-"Welcome!" = "Hoşgeldiniz";
 
 /* No comment provided by engineer. */
 "|%@| is this months name." = "Bu ayın adı |%@|.";

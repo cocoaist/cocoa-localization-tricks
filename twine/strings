@@ -3,16 +3,19 @@
 		en = In |%1$@| there are |%2$U| days this year.
 		comment = No comment provided by engineer.
 		tr = |%1$@| ayında bu sene |%2$U| gün var.
+		de = In |%1$@| there are |%2$U| days this year.
+	[What's up?]
+		en = What's up?
+		comment = Say whatsup to user
+		tr = What's up?
+		de = Was gehen?
 	[We are on |%U|. day of |%@|.]
 		en = We are on |%1$U|. day of |%2$@|.
 		comment = No comment provided by engineer.
 		tr = |%2$@| ayının |%1$U|. günündeyiz.
-	[Welcome!]
-		en = Welcome!
-		comment = Say welcome to the user
-		tr = Hoşgeldiniz
-		de = Willkommen!
+		de = We are on |%1$U|. day of |%2$@|.
 	[|%@| is this months name.]
 		en = |%@| is this months name.
 		comment = No comment provided by engineer.
 		tr = Bu ayın adı |%@|.
+		de = |%@| is this months name.
